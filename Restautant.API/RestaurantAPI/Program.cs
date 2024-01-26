@@ -5,6 +5,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using RestaurantInfrastructure.Data;
 using Microsoft.AspNetCore.Identity;
+using RestaurantImplementation.Services;
+using RestaurantImplementation.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,8 @@ builder.Services.AddDbContext<RmAuthDbContext>(options =>
         sqlServerOptions.EnableRetryOnFailure();
     });
 });
+
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
 builder.Services.AddIdentityCore<IdentityUser>()
     .AddRoles<IdentityRole>()

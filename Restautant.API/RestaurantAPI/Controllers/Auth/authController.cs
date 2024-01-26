@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantImplementation.DTOs.LoginRequestDto;
 using RestaurantImplementation.DTOs.RegisterRequestDto;
+using RestaurantImplementation.Interfaces;
 
 namespace RestaurantAPI.Controllers.Auth
 {
@@ -12,11 +13,11 @@ namespace RestaurantAPI.Controllers.Auth
     public class authController : ControllerBase
     {
         private readonly UserManager<IdentityUser> userManager;
-
-        public authController(UserManager<IdentityUser> userManager)
+        private readonly ITokenRepository tokenRepository;
+        public authController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository)
         {
             this.userManager = userManager;
-
+            this.tokenRepository = tokenRepository;
         }
 
         [HttpPost]
@@ -55,7 +56,12 @@ namespace RestaurantAPI.Controllers.Auth
                     var roles = await userManager.GetRolesAsync(user);
                     if (roles != null)
                     {
-                        return Ok();
+                        var JwtToken = tokenRepository.createJwtToken(user, roles.ToList());
+                        var response = new LoginResponseDto
+                        {
+                            JwtToken = JwtToken,
+                        };
+                        return Ok(response);
                     }
                 }
             }
