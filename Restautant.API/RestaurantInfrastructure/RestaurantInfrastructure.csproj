@@ -15,4 +15,9 @@
     <ProjectReference Include="..\RestaurantImplementation\RestaurantImplementation.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\catagory\" />
+    <Folder Include="Model\product\" />
+  </ItemGroup>
+
 </Project>
