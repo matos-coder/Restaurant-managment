@@ -11,8 +11,5 @@ import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 })
 export class AppComponent {
   title = 'inv5';
-  constructor(private router: Router) {}
-  goToDashboard() {
-    this.router.navigate(['/dashboard']);
-  }
+  constructor() {}
 }
