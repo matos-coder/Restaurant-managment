@@ -14,4 +14,7 @@ export class SidebarComponent {
     // Navigate to the Inventory page
     this.router.navigate(['/inventory']);
   }
+  onStockCountClick(){
+    this.router.navigate(['/StockCount']);
+  }
 }

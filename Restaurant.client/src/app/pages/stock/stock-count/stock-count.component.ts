@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stock-count',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './stock-count.component.css'
 })
 export class StockCountComponent {
-
+  constructor(private router:Router){}
+  onAddStockClick(){
+    this.router.navigate(['/AddStock']);
+  }
 }
