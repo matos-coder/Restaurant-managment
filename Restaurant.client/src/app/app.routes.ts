@@ -6,6 +6,8 @@ import { InventoryComponent } from './pages/inventory/inventory.component';
 import { AddInventoryComponent } from './pages/inventory/add-inventory/add-inventory.component';
 import { StockCountComponent } from './pages/stock/stock-count/stock-count.component';
 import { AddStockCountComponent } from './pages/stock/stock-count/add-stock-count/add-stock-count.component';
+import { StockOpeningComponent } from './pages/stock/stock-opening/stock-opening.component';
+import { StockClosingComponent } from './pages/stock/stock-closing/stock-closing.component';
 
 export const routes: Routes = [
   { path: '', component: AppLayoutComponent,
@@ -16,7 +18,11 @@ export const routes: Routes = [
         { path: 'addinventory', component:AddInventoryComponent},
         { path: 'StockCount', component:StockCountComponent },
         { path: 'AddStock', component:AddStockCountComponent },
-        {  path: '**', redirectTo: ''}
+        { path: 'StockOpening', component:StockOpeningComponent },
+
+        { path: 'StockClosing', component:StockClosingComponent },
+
+        {  path: '**', redirectTo: '' , pathMatch: 'full' }
     ]
   },
   { path: 'notfound', component: AppComponent },

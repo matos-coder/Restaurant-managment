@@ -17,4 +17,10 @@ export class SidebarComponent {
   onStockCountClick(){
     this.router.navigate(['/StockCount']);
   }
+  onStockOpeningClick(){
+    this.router.navigate(['/StockOpening']);
+  }
+  onStockClosingClick(){
+    this.router.navigate(['/StockClosing']);
+  }
 }
