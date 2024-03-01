@@ -8,6 +8,7 @@ import { StockCountComponent } from './pages/stock/stock-count/stock-count.compo
 import { AddStockCountComponent } from './pages/stock/stock-count/add-stock-count/add-stock-count.component';
 import { StockOpeningComponent } from './pages/stock/stock-opening/stock-opening.component';
 import { StockClosingComponent } from './pages/stock/stock-closing/stock-closing.component';
+import { PurchaseLogComponent } from './pages/purchase-log/purchase-log.component';
 
 export const routes: Routes = [
   { path: '', component: AppLayoutComponent,
@@ -22,6 +23,7 @@ export const routes: Routes = [
 
         { path: 'StockClosing', component:StockClosingComponent },
 
+        { path: 'PurchaseLog', component:PurchaseLogComponent },
         {  path: '**', redirectTo: '' , pathMatch: 'full' }
     ]
   },

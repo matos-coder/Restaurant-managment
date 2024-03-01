@@ -23,4 +23,7 @@ export class SidebarComponent {
   onStockClosingClick(){
     this.router.navigate(['/StockClosing']);
   }
+  onPurchaseLogClick(){
+    this.router.navigate(['/PurchaseLog']);
+  }
 }
