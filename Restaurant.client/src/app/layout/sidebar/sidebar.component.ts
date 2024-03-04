@@ -26,4 +26,7 @@ export class SidebarComponent {
   onPurchaseLogClick(){
     this.router.navigate(['/PurchaseLog']);
   }
+  onWeeklyReportClick(){
+    this.router.navigate(['/WeeklyReport']);
+  }
 }

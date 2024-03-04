@@ -9,6 +9,7 @@ import { AddStockCountComponent } from './pages/stock/stock-count/add-stock-coun
 import { StockOpeningComponent } from './pages/stock/stock-opening/stock-opening.component';
 import { StockClosingComponent } from './pages/stock/stock-closing/stock-closing.component';
 import { PurchaseLogComponent } from './pages/purchase-log/purchase-log.component';
+import { ReportComponent } from './pages/report/report.component';
 
 export const routes: Routes = [
   { path: '', component: AppLayoutComponent,
@@ -24,6 +25,7 @@ export const routes: Routes = [
         { path: 'StockClosing', component:StockClosingComponent },
 
         { path: 'PurchaseLog', component:PurchaseLogComponent },
+        { path: 'WeeklyReport', component:ReportComponent },
         {  path: '**', redirectTo: '' , pathMatch: 'full' }
     ]
   },
