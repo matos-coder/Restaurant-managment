@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   constructor(private router:Router){}
+  onDashboardClick(){
+    this.router.navigate(['/dashboard']);
+  }
   onInventoryClick() {
     // Navigate to the Inventory page
     this.router.navigate(['/inventory']);

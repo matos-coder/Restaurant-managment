@@ -16,6 +16,7 @@ export const routes: Routes = [
 
     children: [
         { path: '', component:DashboardComponent },
+        { path: 'dashboard', component:DashboardComponent },
         { path: 'inventory', component:InventoryComponent },
         { path: 'addinventory', component:AddInventoryComponent},
         { path: 'StockCount', component:StockCountComponent },
