@@ -10,6 +10,8 @@ import { StockOpeningComponent } from './pages/stock/stock-opening/stock-opening
 import { StockClosingComponent } from './pages/stock/stock-closing/stock-closing.component';
 import { PurchaseLogComponent } from './pages/purchase-log/purchase-log.component';
 import { ReportComponent } from './pages/report/report.component';
+import { CatagoryComponent } from './pages/setting/catagory/catagory.component';
+import { AddCatagoryComponent } from './pages/setting/catagory/add-catagory/add-catagory.component';
 
 export const routes: Routes = [
   { path: '', component: AppLayoutComponent,
@@ -27,6 +29,8 @@ export const routes: Routes = [
 
         { path: 'PurchaseLog', component:PurchaseLogComponent },
         { path: 'WeeklyReport', component:ReportComponent },
+        { path: 'Catagory', component:CatagoryComponent },
+        { path: 'addCatagory', component:AddCatagoryComponent },
         {  path: '**', redirectTo: '' , pathMatch: 'full' }
     ]
   },

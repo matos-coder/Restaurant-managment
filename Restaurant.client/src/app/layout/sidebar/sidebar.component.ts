@@ -32,4 +32,7 @@ export class SidebarComponent {
   onWeeklyReportClick(){
     this.router.navigate(['/WeeklyReport']);
   }
+  onCatagoryClick(){
+    this.router.navigate(['/Catagory']);
+  }
 }
