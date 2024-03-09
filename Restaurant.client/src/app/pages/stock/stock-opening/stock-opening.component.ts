@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddStockOpeningComponent } from './add-stock-opening/add-stock-opening.component';
 
 @Component({
   selector: 'app-stock-opening',
@@ -8,7 +10,12 @@ import { Component } from '@angular/core';
   styleUrl: './stock-opening.component.css'
 })
 export class StockOpeningComponent {
-  onAddStockClick(){
-    
+  constructor(private modalService:NgbModal,){}
+  addStockOpening(){
+    let modalRef = this.modalService.open(AddStockOpeningComponent, { size: 'lg', backdrop: 'static' })
+
+    modalRef.result.then(() => {
+
+    })
   }
 }
