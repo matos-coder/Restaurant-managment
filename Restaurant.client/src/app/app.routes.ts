@@ -12,8 +12,14 @@ import { PurchaseLogComponent } from './pages/purchase-log/purchase-log.componen
 import { ReportComponent } from './pages/report/report.component';
 import { CatagoryComponent } from './pages/setting/catagory/catagory.component';
 import { AddCatagoryComponent } from './pages/setting/catagory/add-catagory/add-catagory.component';
+import { LoginComponent } from './auth/login/login.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+
+
+
   { path: '', component: AppLayoutComponent,
 
     children: [
