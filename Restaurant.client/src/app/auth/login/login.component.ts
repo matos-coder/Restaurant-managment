@@ -28,21 +28,27 @@ export class LoginComponent implements OnInit{
 
     });
   }
+  signUp(){
+    this.router.navigate(['/register']);
+  }
   login() {
     console.log(this.loginForm.value);
     if (this.loginForm.valid) {
+
       this.userService.login(this.loginForm.value).subscribe({
         next: (res) => {
 
-          if (res.success) {
-            this.messageService.add({ severity: 'success', summary: 'Successfull', detail: res.message });
+          if (res.jwtToken) {
 
-            sessionStorage.setItem('token', res.data);
-            this.router.navigateByUrl('/');
+            console.log("Login Successful");
+            this.messageService.add({ severity: 'success', summary: 'Successfull', });
+
+            sessionStorage.setItem('token', res.jwtToken);
+            this.router.navigateByUrl('/applayout');
           }
           else {
 
-            this.messageService.add({ severity: 'error', summary: 'Authentication failed.', detail: res.message });
+            this.messageService.add({ severity: 'error', summary: 'Authentication failed.',  });
 
           }
 

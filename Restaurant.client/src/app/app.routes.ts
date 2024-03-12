@@ -13,14 +13,16 @@ import { ReportComponent } from './pages/report/report.component';
 import { CatagoryComponent } from './pages/setting/catagory/catagory.component';
 import { AddCatagoryComponent } from './pages/setting/catagory/add-catagory/add-catagory.component';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 
 
 
-  { path: '', component: AppLayoutComponent,
+  { path: 'applayout', component: AppLayoutComponent,
 
     children: [
         { path: '', component:DashboardComponent },
