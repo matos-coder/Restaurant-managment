@@ -39,8 +39,10 @@ export class LoginComponent implements OnInit{
         next: (res) => {
 
           if (res.jwtToken) {
-
+            const token = this.getToken();
+            console.log(token);
             console.log("Login Successful");
+
             this.messageService.add({ severity: 'success', summary: 'Successfull', });
 
             sessionStorage.setItem('token', res.jwtToken);
@@ -61,5 +63,7 @@ export class LoginComponent implements OnInit{
         }
       })
     }
+
   }
+  getToken = (): string | null  => sessionStorage.getItem('token') || null ;
 }
